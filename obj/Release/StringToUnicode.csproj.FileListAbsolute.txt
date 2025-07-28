@@ -1,0 +1,8 @@
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\bin\Release\StringToUnicode.exe.config
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\bin\Release\StringToUnicode.exe
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\obj\Release\StringToUnicode.csproj.AssemblyReference.cache
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\obj\Release\StringToUnicode.Form1.resources
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\obj\Release\StringToUnicode.Properties.Resources.resources
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\obj\Release\StringToUnicode.csproj.GenerateResource.cache
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\obj\Release\StringToUnicode.csproj.CoreCompileInputs.cache
+E:\SoftWare\VPN\CF-VPN\StringToUnicode\obj\Release\StringToUnicode.exe
