@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlTypes;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -50,7 +51,14 @@ namespace StringToUnicode
             StringBuilder sb = new StringBuilder();
             foreach (char c in input)
             {
-                sb.AppendFormat("\\u{0:x4}", (int)c);
+                if (checkBox1.Checked)
+                {
+                    sb.AppendFormat("\\\\u{0:x4}", (int)c);
+                }
+                else
+                {
+                    sb.AppendFormat("\\u{0:x4}", (int)c);
+                }
             }
             return sb.ToString();
         }
@@ -62,10 +70,21 @@ namespace StringToUnicode
         /// <returns></returns>
         string UnicodeEscapeToString(string input)
         {
-            return Regex.Replace(input, @"\\u([0-9A-Fa-f]{4})", match =>
+            bool contains = input.Contains("\\\\");
+            if (contains)
             {
-                return ((char)int.Parse(match.Groups[1].Value, NumberStyles.HexNumber)).ToString();
-            });
+                return Regex.Replace(input, @"\\\\u([0-9A-Fa-f]{4})", match =>
+                {
+                    return ((char)int.Parse(match.Groups[1].Value, NumberStyles.HexNumber)).ToString();
+                });
+            }
+            else
+            {
+                return Regex.Replace(input, @"\\u([0-9A-Fa-f]{4})", match =>
+                {
+                    return ((char)int.Parse(match.Groups[1].Value, NumberStyles.HexNumber)).ToString();
+                });
+            }
         }
 
     }
