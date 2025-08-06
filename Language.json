@@ -1,0 +1,20 @@
+{
+  "zh-CN": {
+    "Libel1": "字符串：",
+    "Libel2": "Unicode 序列：",
+    "CheckBox1": "格式化为 \" \\\\ \" 格式的 Unicode 序列",
+    "Button1": "转为 Unicode",
+    "Button2": "转为字符串",
+    "Button3": "清除",
+    "Button4": "退出"
+  },
+  "en-US": {
+    "Libel1": "String :",
+    "Libel2": "Unicode sequence :",
+    "CheckBox1": "Formatted as the \" \\\\ \" Unicode sequence",
+    "Button1": "To Unicode",
+    "Button2": "To String",
+    "Button3": "Clear",
+    "Button4": "Exit"
+  }
+}

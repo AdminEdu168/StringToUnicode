@@ -1,17 +1,35 @@
-﻿using System;
-using System.Data.SqlTypes;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace StringToUnicode
 {
     public partial class Form1 : Form
     {
+        string currentLanguage = CultureInfo.CurrentUICulture.Name;    // 获取当前UI用户界面语言
+        dynamic language = new Language().GetLanguage(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\Language.json");      
+
         public Form1()
         {
             InitializeComponent();
+            if (language == null || language[currentLanguage] == null) { currentLanguage = "en-US"; }
+
+            if (language[currentLanguage] != null)
+            {
+                label1.Text = language[currentLanguage].Libel1;
+                label2.Text = language[currentLanguage].Libel2;
+                checkBox1.Text = language[currentLanguage].CheckBox1;
+                button1.Text = language[currentLanguage].Button1;
+                button2.Text = language[currentLanguage].Button2;
+                button3.Text = language[currentLanguage].Button3;
+                button4.Text = language[currentLanguage].Button4;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
